@@ -16,7 +16,7 @@ const style = {
     p: 4,
 };
 
-function TopNav({ setIsDarkMode }) {
+function TopNav({ setIsDarkMode, setIsMenu }) {
     const [darkMode, setDarkMode] = useState(false);
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
@@ -33,7 +33,10 @@ function TopNav({ setIsDarkMode }) {
     return (
         <nav className='w-full h-16 shadow-md border rounded-md'>
             <div className='w-full h-full flex justify-between items-center px-5 md:px-10'>
-                <div className='w-fit h-full flex items-center gap-3 ml-10 lg:ml-0'>
+                <div className='w-fit h-full flex items-center gap-3'>
+                    <div className='dark:text-white lg:hidden' onClick={() => { setIsMenu(true) }}>
+                        <i className='bx bx-menu text-3xl' ></i>
+                    </div>
                     <Button onClick={handleOpen} className='space-x-2'>
                         <i className='bx bx-search-alt-2 text-2xl text-gray-400 dark:text-gray-400 font-extralight'></i>
                         <span className='text-sm text-gray-500 dark:text-gray-300 capitalize hidden md:block'>Search</span>
@@ -62,7 +65,7 @@ function TopNav({ setIsDarkMode }) {
                         {
                             darkMode
                                 ? <i className='bx bx-moon text-gray-300' ></i>
-                                : <i className='bx bx-sun'></i>
+                                : <i className='bx bx-sun text-xl'></i>
                         }
                     </div>
                     <div className='cursor-pointer'>
