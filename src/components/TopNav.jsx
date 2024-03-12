@@ -35,7 +35,7 @@ function TopNav({ setIsDarkMode, setIsMenu }) {
             <div className='w-full h-full flex justify-between items-center px-5 md:px-10'>
                 <div className='w-fit h-full flex items-center gap-3'>
                     <div className='dark:text-white lg:hidden' onClick={() => { setIsMenu(true) }}>
-                        <i className='bx bx-menu text-3xl' ></i>
+                        <i className='bx bx-menu text-3xl cursor-pointer' ></i>
                     </div>
                     <Button onClick={handleOpen} className='space-x-2'>
                         <i className='bx bx-search-alt-2 text-2xl text-gray-400 dark:text-gray-400 font-extralight'></i>

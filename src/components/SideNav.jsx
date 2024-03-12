@@ -1,16 +1,10 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 
 function SideNav({ isMenu, setIsMenu }) {
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [isLocked, setIsLocked] = useState(true);
-    const [isOpen, setIsOpen] = useState({
-        page: false,
-        user: false,
-        role: false
-    });
-    // const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const isLargeView = useMediaQuery({ query: '(min-width: 1024px)' })
 
@@ -22,22 +16,10 @@ function SideNav({ isMenu, setIsMenu }) {
         setIsLocked(prev => !prev);
     };
 
-    const handleDropdown = useCallback((type) => {
-        setIsOpen(prev => ({ ...prev, [type]: !prev[type] }));
-    }, []);
-
     useEffect(() => {
         const handleMouseOver = () => {
             setIsCollapsed(false);
         };
-
-        if (isCollapsed) {
-            setIsOpen({
-                page: false,
-                user: false,
-                role: false
-            });
-        }
 
         const handleMouseOut = () => {
             setIsCollapsed(true);
@@ -77,7 +59,7 @@ function SideNav({ isMenu, setIsMenu }) {
                                     : <i className='bx bx-radio-circle text-3xl'></i>
                             }
                         </div>
-                        : <div className='lg:hidden ' onClick={handleMenuOpen}>
+                        : <div className='lg:hidden cursor-pointer' onClick={handleMenuOpen}>
                             {
                                 isMenu && <i className='bx bx-x text-2xl dark:text-white'></i>
                             }
@@ -89,59 +71,42 @@ function SideNav({ isMenu, setIsMenu }) {
                     <i className='bx bx-home-smile text-2xl'></i>
                     <Link to="/" className={`${isCollapsed && 'hidden'}`}>Dashboard</Link>
                 </div>
-                <div className='flex items-center gap-3'>
-                    <i className='bx bxs-analyse text-2xl' ></i>
-                    <Link to="/" className={`${isCollapsed && 'hidden'}`}>Analytics</Link>
-                </div>
                 <div className='flex flex-col gap-3 w-full'>
                     <span className={`${isCollapsed && 'hidden'} text-sm text-gray-500`}>Pages</span>
-                    <div className='flex flex-col gap-3 cursor-pointer' onClick={(e) => { handleDropdown("page") }}>
-                        <div className='flex items-center gap-3'>
-                            <i className='bx bx-copy-alt text-2xl'></i>
-                            <div className={`${isCollapsed && 'hidden'} w-full flex items-center justify-between`}>
-                                <span>Pages</span>
-                                <div className='cursor-pointer' >
-                                    {
-                                        isOpen.page
-                                            ? <i className='bx bx-chevron-down text-xl delay-0 duration-100' ></i>
-                                            : <i className='bx bx-chevron-right text-xl delay-0 duration-100' ></i>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                        <div className={`${!isOpen.page && 'hidden'} pl-10`}>
-                            <ul className='list-disc space-y-2'>
-                                <li><Link to="/pages/landing-page">Landing Page</Link></li>
-                                <li><Link to="/pages/testimonials-page">Testimonials Page</Link></li>
-                                <li><Link to="/pages/services-page">Services Page</Link></li>
-                                <li><Link to="/page/contactus-page">Contact Us</Link></li>
-                            </ul>
-                        </div>
+                    <div className='flex items-center gap-3'>
+                        <i className='bx bx-list-ol text-2xl' ></i>
+                        <Link to="/pages/hero" className={`${isCollapsed && 'hidden'}`}>Hero</Link>
                     </div>
                     <div className='flex items-center gap-3'>
-                        <i className='bx bx-calendar text-2xl' ></i>
-                        <Link to="/pages/calender" className={`${isCollapsed && 'hidden'}`}>Calender</Link>
+                        <i className='bx bx-list-ol text-2xl' ></i>
+                        <Link to="/pages/about-us" className={`${isCollapsed && 'hidden'}`}>About Us</Link>
                     </div>
-                    <div className='flex flex-col gap-3 cursor-pointer' onClick={(e) => { handleDropdown("user") }}>
-                        <div className='flex items-center gap-3'>
-                            <i className='bx bx-user text-2xl'></i>
-                            <div className={`${isCollapsed && 'hidden'} w-full flex items-center justify-between`}>
-                                <span>User</span>
-                                <div className='cursor-pointer'>
-                                    {
-                                        isOpen.user
-                                            ? <i className='bx bx-chevron-down text-xl delay-0 duration-100' ></i>
-                                            : <i className='bx bx-chevron-right text-xl delay-0 duration-100' ></i>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                        <div className={`${!isOpen.user && 'hidden'} pl-10`}>
-                            <ul className='list-disc space-y-2'>
-                                <li><Link to="/users/list">List</Link></li>
-                                <li><Link to="/users/view">View</Link></li>
-                            </ul>
-                        </div>
+                    <div className='flex items-center gap-3'>
+                        <i className='bx bx-list-ol text-2xl' ></i>
+                        <Link to="/pages/services" className={`${isCollapsed && 'hidden'}`}>Service</Link>
+                    </div>
+                    <div className='flex items-center gap-3'>
+                        <i className='bx bx-list-ol text-2xl' ></i>
+                        <Link to="/pages/why-choose-us" className={`${isCollapsed && 'hidden'}`}>Why Choose Us</Link>
+                    </div>
+                    <div className='flex items-center gap-3'>
+                        <i className='bx bx-list-ol text-2xl' ></i>
+                        <Link to="/pages/testimonials" className={`${isCollapsed && 'hidden'}`}>Testimonials</Link>
+                    </div>
+                    <div className='flex items-center gap-3'>
+                        <i className='bx bx-list-ol text-2xl' ></i>
+                        <Link to="/pages/contact-us" className={`${isCollapsed && 'hidden'}`}>Contact Us</Link>
+                    </div>
+                </div>
+                <div className='flex flex-col gap-3 w-full'>
+                    <span className={`${isCollapsed && 'hidden'} text-sm text-gray-500`}>User</span>
+                    <div className='flex items-center gap-3'>
+                        <i className='bx bx-list-ol text-2xl' ></i>
+                        <Link to="/user/list" className={`${isCollapsed && 'hidden'}`}>List</Link>
+                    </div>
+                    <div className='flex items-center gap-3'>
+                        <i className='bx bx-street-view text-2xl'></i>
+                        <Link to="/user/view" className={`${isCollapsed && 'hidden'}`}>View</Link>
                     </div>
                 </div>
                 <div className='flex flex-col gap-3 w-full'>
@@ -153,25 +118,6 @@ function SideNav({ isMenu, setIsMenu }) {
                     <div className='flex items-center gap-3'>
                         <i className='bx bx-lock-alt text-2xl' ></i>
                         <Link to="/permissions" className={`${isCollapsed && 'hidden'}`}>Permissions</Link>
-                    </div>
-                </div>
-                <div className='flex flex-col gap-3 w-full'>
-                    <span className={`${isCollapsed && 'hidden'} text-sm text-gray-500`}>Charts</span>
-                    <div className='flex items-center gap-3'>
-                        <i className='bx bx-pie-chart-alt-2 text-2xl' ></i>
-                        <Link to="/charts/pie-chart" className={`${isCollapsed && 'hidden'}`}>Pie Chart</Link>
-                    </div>
-                    <div className='flex items-center gap-3'>
-                        <i className='bx bx-bar-chart-alt-2 text-2xl' ></i>
-                        <Link to="/charts/bar-chart" className={`${isCollapsed && 'hidden'}`}>Bar Chart</Link>
-                    </div>
-                    <div className='flex items-center gap-3'>
-                        <i className='bx bx-line-chart text-2xl' ></i>
-                        <Link to="/charts/line-chart" className={`${isCollapsed && 'hidden'}`}>Line Chart</Link>
-                    </div>
-                    <div className='flex items-center gap-3'>
-                        <i className='bx bxl-graphql text-2xl'></i>
-                        <Link to="/charts/radar-chart" className={`${isCollapsed && 'hidden'}`}>Radar Chart</Link>
                     </div>
                 </div>
             </div>

@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Dashboard from './routes/Dashboard'
 import Layout from './components/shared/Layout';
-import Product from './components/Product';
-import Chart from "chart.js/auto";
-import { CategoryScale } from "chart.js";
-
-Chart.register(CategoryScale);
+import "chart.js/auto";
+import Service from './routes/Service';
+import ContactUs from './routes/ContactUs';
+import Testimonials from './routes/Testimonials';
+import WhyChooseUs from './routes/WhyChooseUs';
+import Hero from './routes/Hero'
+import AboutUs from './routes/AboutUs';
 
 function App() {
     const [isDarkMode, setIsDarkMode] = useState(false)
@@ -17,10 +19,18 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Layout setIsDarkMode={setIsDarkMode} />}>
                         <Route index={true} element={<Dashboard />} />
-                        <Route path='products' element={<Product />} />
+                        <Route path='pages'>
+                            <Route path='about-us' element={<AboutUs />} />
+                            <Route path='services' element={<Service />} />
+                            <Route path='contact-us' element={<ContactUs />} />
+                            <Route path='testimonials' element={<Testimonials />} />
+                            <Route path='why-choose-us' element={<WhyChooseUs />} />
+                            <Route path='hero' element={<Hero />} />
+                        </Route>
                     </Route>
                 </Routes>
             </Router>
+
         </div>
     )
 }
