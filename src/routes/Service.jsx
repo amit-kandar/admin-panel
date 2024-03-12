@@ -368,9 +368,10 @@ function Service() {
                                     type="text"
                                     id="service"
                                     name="service"
+                                    placeholder='Enter service name'
                                     value={addData.service}
                                     onChange={handleOnChange}
-                                    className="py-2 pl-2 border rounded-md border-gray-500 outline-none text-black dark:text-gray-200 placeholder:text-gray-500 focus:ring focus:ring-indigo-500"
+                                    className="py-2 pl-2 border rounded-md border-gray-500 outline-none text-black dark:bg-slate-900 dark:text-gray-200 placeholder:text-gray-500 focus:ring focus:ring-indigo-500"
                                 />
                             </div>
 
