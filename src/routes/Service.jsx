@@ -393,7 +393,7 @@ function Service() {
 
                             {/* Description */}
                             <div className='flex flex-col gap-1'>
-                                <label htmlFor="title" className="font-medium text-gray-700 dark:text-gray-300">
+                                <label htmlFor="description" className="font-medium text-gray-700 dark:text-gray-300">
                                     Description
                                 </label>
                                 <textarea
