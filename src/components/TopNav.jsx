@@ -31,8 +31,8 @@ function TopNav({ setIsDarkMode, setIsMenu }) {
     }
 
     return (
-        <nav className='w-full h-16 shadow-md border rounded-md'>
-            <div className='w-full h-full flex justify-between items-center px-5 md:px-10'>
+        <nav className='w-full h-16 shadow-md border rounded-md px-5 md:px-10'>
+            <div className='w-full h-full flex justify-between items-center'>
                 <div className='w-fit h-full flex items-center gap-3'>
                     <div className='dark:text-white lg:hidden' onClick={() => { setIsMenu(true) }}>
                         <i className='bx bx-menu text-3xl cursor-pointer' ></i>
