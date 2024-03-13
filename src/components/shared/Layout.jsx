@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import SideNav from '../SideNav';
 import TopNav from '../TopNav';
+import Footer from '../Footer';
 
 function Layout({ setIsDarkMode }) {
     const [isMenu, setIsMenu] = useState(false);
@@ -16,7 +17,10 @@ function Layout({ setIsDarkMode }) {
                     <TopNav setIsDarkMode={setIsDarkMode} setIsMenu={setIsMenu} />
                 </div>
                 <div className='flex-1 pt-5 pl-5 pr-1 overflow-y-scroll'>
-                    <Outlet />
+                    <div className='min-h-screen'>
+                        <Outlet />
+                    </div>
+                    <Footer />
                 </div>
             </div>
         </div>
