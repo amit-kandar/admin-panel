@@ -28,13 +28,20 @@ const Table = ({ columns, filteredUsers, selectedUsers, handleCheckboxChange, de
                             </td>
                         ))}
                         <td className="border border-gray-800 px-4 py-2">
-                            <button
-                                className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded mr-2"
-                                onClick={() => deleteUser(user.id)}
-                            >
-                                Delete
-                            </button>
-                            {/* Add edit functionality here */}
+                            <div className='flex'>
+                                <button
+                                    className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-3 rounded mr-2"
+                                    onClick={() => deleteUser(user.id)}
+                                >
+                                    <i className="fa-solid fa-trash"></i>
+                                </button>
+                                <button
+                                    className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-1 px-3 rounded mr-2"
+                                    onClick={() => deleteUser(user.id)}
+                                >
+                                    <i className="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
                         </td>
                     </tr>
                 ))}

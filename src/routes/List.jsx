@@ -120,8 +120,8 @@ const List = () => {
     };
 
     return (
-        <div className="container mx-auto p-4">
-            <div className="flex justify-between items-center mb-4">
+        <div className="container mx-auto">
+            <div className="flex flex-col gap-3 md:flex-row items-start justify-between md:items-center mb-4">
                 <SearchBar handleSearch={handleSearch} handleSelectAll={handleSelectAll} handleDeleteSelected={handleDeleteSelected} showDeleteButton={showDeleteButton} handleDismiss={handleDismiss} setUsersPerPage={setUsersPerPage} usersPerPage={usersPerPage} />
 
                 <div className="flex items-center">
@@ -129,7 +129,9 @@ const List = () => {
                     <ColumnToggle columns={columns} handleColumnToggle={handleColumnToggle} />
                 </div>
             </div>
-            <Table columns={columns} filteredUsers={filteredUsers} selectedUsers={selectedUsers} handleCheckboxChange={handleCheckboxChange} deleteUser={deleteUser} />
+            <div className='w-full overflow-x-scroll xl:overflow-hidden'>
+                <Table columns={columns} filteredUsers={filteredUsers} selectedUsers={selectedUsers} handleCheckboxChange={handleCheckboxChange} deleteUser={deleteUser} />
+            </div>
 
             <Pagination currentPage={currentPage} usersPerPage={usersPerPage} users={users} paginate={paginate} nextPage={nextPage} prevPage={prevPage} goToFirstPage={goToFirstPage} goToLastPage={goToLastPage} />
         </div>

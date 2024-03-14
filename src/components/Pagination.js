@@ -4,16 +4,15 @@ const Pagination = ({ currentPage, usersPerPage, users, paginate, nextPage, prev
     const showingText = `Showing ${Math.min((currentPage - 1) * usersPerPage + 1, users.length)} to ${Math.min(currentPage * usersPerPage, users.length)} of ${users.length} entries`;
 
     return (
-        <div className='w-full flex justify-between items-center'>
+        <div className='w-full flex flex-col justify-between items-center sm:flex-row'>
             <div className='text-gray-700 dark:text-gray-300'>{showingText}</div>
-            {/* Pagination */}
             <ul className="flex list-none justify-end py-4">
                 <li className="mx-1">
                     <button
                         className="px-2 py-1 rounded bg-gray-200 dark:bg-gray-600"
                         onClick={() => goToFirstPage()}
                     >
-                        <i className='bx bx-chevrons-left text-2xl font-medium dark:text-gray-300' ></i> {/* Go to First Page */}
+                        <i className='bx bx-chevrons-left text-2xl font-medium dark:text-gray-300' ></i>
                     </button>
                 </li>
                 <li className="mx-1">
@@ -21,7 +20,7 @@ const Pagination = ({ currentPage, usersPerPage, users, paginate, nextPage, prev
                         className="px-2 py-1 rounded bg-gray-200 dark:bg-gray-600"
                         onClick={() => prevPage()}
                     >
-                        <i className='bx bx-chevron-left text-2xl font-medium dark:text-gray-300'></i> {/* Previous Page */}
+                        <i className='bx bx-chevron-left text-2xl font-medium dark:text-gray-300'></i>
                     </button>
                 </li>
                 {[...Array(Math.ceil(users.length / usersPerPage)).keys()].map(number => (
@@ -39,7 +38,7 @@ const Pagination = ({ currentPage, usersPerPage, users, paginate, nextPage, prev
                         className="px-2 py-1 rounded bg-gray-200 dark:bg-gray-600"
                         onClick={() => nextPage()}
                     >
-                        <i className='bx bx-chevron-right text-2xl font-medium dark:text-gray-300'></i> {/* Next Page */}
+                        <i className='bx bx-chevron-right text-2xl font-medium dark:text-gray-300'></i>
                     </button>
                 </li>
                 <li className="mx-1">
@@ -47,10 +46,10 @@ const Pagination = ({ currentPage, usersPerPage, users, paginate, nextPage, prev
                         className="px-2 py-1 rounded bg-gray-200 dark:bg-gray-600"
                         onClick={() => goToLastPage()}
                     >
-                        <i className='bx bx-chevrons-right text-2xl font-medium dark:text-gray-300' ></i> {/* Go to Last Page */}
+                        <i className='bx bx-chevrons-right text-2xl font-medium dark:text-gray-300' ></i>
                     </button>
                 </li>
-            </ul>{/* Pagination */}
+            </ul>
         </div>
     );
 };
