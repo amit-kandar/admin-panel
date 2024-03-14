@@ -1,46 +1,46 @@
 {
-  "field_data": [
-    {
-      "field_name": "name",
-      "type": "string",
-      "placeholder_text": "Enter your field name",
-      "required": true,
-      "id": "d350"
-    },
-    {
-      "id": "ccbe",
-      "field_name": "email",
-      "type": "string",
-      "placeholder_text": "Enter your email",
-      "required": true
-    },
-    {
-      "id": "f86e",
-      "field_name": "phone",
-      "type": "string",
-      "placeholder_text": "Enter your phone number",
-      "required": true
-    },
-    {
-      "id": "22e7",
-      "field_name": "message",
-      "type": "string",
-      "placeholder_text": "Enter your message",
-      "required": true
-    },
-    {
-      "id": "e640",
-      "field_name": "subject",
-      "type": "string",
-      "placeholder_text": "Enter the subject",
-      "required": true
-    },
-    {
-      "id": "db7a",
-      "field_name": "PIN",
-      "type": "number",
-      "placeholder_text": "Enter your PIN number",
-      "required": true
-    }
-  ]
+    "field_data": [
+        {
+            "field_name": "name",
+            "type": "string",
+            "placeholder_text": "Enter your field name",
+            "required": true,
+            "id": "d350"
+        },
+        {
+            "id": "ccbe",
+            "field_name": "email",
+            "type": "string",
+            "placeholder_text": "Enter your email",
+            "required": true
+        },
+        {
+            "id": "f86e",
+            "field_name": "phone",
+            "type": "string",
+            "placeholder_text": "Enter your phone number",
+            "required": true
+        },
+        {
+            "id": "22e7",
+            "field_name": "message",
+            "type": "string",
+            "placeholder_text": "Enter your message",
+            "required": true
+        },
+        {
+            "id": "e640",
+            "field_name": "subject",
+            "type": "string",
+            "placeholder_text": "Enter the subject",
+            "required": true
+        },
+        {
+            "id": "db7a",
+            "field_name": "PIN",
+            "type": "number",
+            "placeholder_text": "Enter your PIN number",
+            "required": true
+        }
+    ]
 }

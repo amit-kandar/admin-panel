@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Dropdown from 'react-dropdown';
-import { url } from '../constant';
 import axios from 'axios';
 import useFetch from '../hooks/useFetch';
 
@@ -19,6 +18,8 @@ const initial_field_values = {
     placeholder_text: "",
     required: ""
 }
+
+const url = 'http://localhost:3031/field_data'
 
 function ContactUs() {
     const [pageData, setPageData] = useState(initial_values);
