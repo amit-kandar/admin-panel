@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Table = ({ columns, filteredUsers, selectedUsers, handleCheckboxChange, deleteUser }) => {
     return (
@@ -35,12 +36,15 @@ const Table = ({ columns, filteredUsers, selectedUsers, handleCheckboxChange, de
                                 >
                                     <i className="fa-solid fa-trash"></i>
                                 </button>
-                                <button
+
+                                <Link to={`/user/view/${user.id}`} className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-1 px-3 rounded mr-2">
+                                    <i className="fa-regular fa-eye"></i>
+                                </Link>
+                                {/* <button
                                     className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-1 px-3 rounded mr-2"
                                     onClick={() => deleteUser(user.id)}
                                 >
-                                    <i className="fa-regular fa-eye"></i>
-                                </button>
+                                </button> */}
                             </div>
                         </td>
                     </tr>

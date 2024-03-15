@@ -33,7 +33,7 @@ function App() {
                         </Route>
                         <Route path='user'>
                             <Route path='list' element={<UserList />} />
-                            <Route path='view' element={<View />} />
+                            <Route path='view/:userId' element={<View />} />
                         </Route>
                     </Route>
                 </Routes>
