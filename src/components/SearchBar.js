@@ -25,7 +25,7 @@ const SearchBar = ({ handleSearch, handleSelectAll, handleDeleteSelected, showDe
     const handleSelect = (value) => {
         return () => {
             setUsersPerPage(value);
-            setIsShow(false); // Close the dropdown when an item is selected
+            setIsShow(false);
         };
     };
 

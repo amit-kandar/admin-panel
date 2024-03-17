@@ -113,11 +113,11 @@ function SideNav({ isMenu, setIsMenu }) {
                     <span className={`${isCollapsed && 'hidden'} text-sm text-gray-500`}>Roles & Permissions</span>
                     <div className='flex items-center gap-3'>
                         <i className='bx bx-check-shield text-2xl'></i>
-                        <Link to="/roles" className={`${isCollapsed && 'hidden'}`}>Roles</Link>
+                        <Link to="/roles-permissions/roles" className={`${isCollapsed && 'hidden'}`}>Roles</Link>
                     </div>
                     <div className='flex items-center gap-3'>
                         <i className='bx bx-lock-alt text-2xl' ></i>
-                        <Link to="/permissions" className={`${isCollapsed && 'hidden'}`}>Permissions</Link>
+                        <Link to="/roles-permissions/permissions" className={`${isCollapsed && 'hidden'}`}>Permissions</Link>
                     </div>
                 </div>
             </div>

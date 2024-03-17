@@ -190,7 +190,8 @@ function Service() {
         }
     };
 
-
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error}</div>;
     return (
         <div className='w-full flex justify-center'>
             <div className='container w-full py-5 bg-white dark:bg-slate-900 text-gray-500 border border-gray-500 rounded-md dark:text-gray-300'>

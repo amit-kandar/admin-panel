@@ -1,0 +1,49 @@
+{
+    "permission": [
+        {
+            "name": "APPS & PAGES",
+            "assigned_to": "Management",
+            "created_date": "14 Apr 2021, 8:43 PM"
+        },
+        {
+            "name": "Manage Billing & Roles",
+            "assigned_to": "Administrator",
+            "created_date": "16 Sep 2021, 5:20 PM"
+        },
+        {
+            "name": "Add & Remove Users",
+            "assigned_to": "Administrator, Manager",
+            "created_date": "14 Oct 2021, 10:20 AM"
+        },
+        {
+            "name": "Project Planning",
+            "assigned_to": "Administrator, Users, Support",
+            "created_date": "14 Oct 2021, 10:20 AM"
+        },
+        {
+            "name": "Manage Email Sequences",
+            "assigned_to": "Administrator, Users, Support",
+            "created_date": "23 Aug 2021, 2:00 PM"
+        },
+        {
+            "name": "Client Communication",
+            "assigned_to": "Adminstrator, Manager",
+            "created_date": "15 Apr 2021, 11:30 AM"
+        },
+        {
+            "name": "Only View",
+            "assigned_to": "Administrator, Restricted User",
+            "created_date": "04 Dec 2021, 8:15 PM"
+        },
+        {
+            "name": "Financial Management",
+            "assigned_to": "Adininistrator, Manager",
+            "created_date": "25 Feb 2021, 10:30 AM"
+        },
+        {
+            "name": "Manage Others' Tasks",
+            "assigned_to": "Administrator, Support",
+            "created_date": "04 Nav 2021 11:45 AM"
+        }
+    ]
+}

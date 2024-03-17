@@ -12,6 +12,8 @@ import AboutUs from './routes/AboutUs';
 import Test from './routes/Test';
 import UserList from './routes/List';
 import View from './routes/View';
+import Role from './routes/Role';
+import Permission from './routes/Permission';
 
 function App() {
     const [isDarkMode, setIsDarkMode] = useState(false)
@@ -34,6 +36,10 @@ function App() {
                         <Route path='user'>
                             <Route path='list' element={<UserList />} />
                             <Route path='view/:userId' element={<View />} />
+                        </Route>
+                        <Route path='roles-permissions'>
+                            <Route path='roles' element={<Role />} />
+                            <Route path='permissions' element={<Permission />} />
                         </Route>
                     </Route>
                 </Routes>

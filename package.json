@@ -31,7 +31,8 @@
   "scripts": {
     "start": "react-scripts start",
     "start:server1": "json-server --watch ./src/util/services.json --port 3032",
-    "start:server2": "json-server --watch ./src/util/field_data.json --port 3031"
+    "start:server2": "json-server --watch ./src/util/field_data.json --port 3031",
+    "start:server3": "json-server --watch ./src/util/permission.json --port 3033"
   },
   "eslintConfig": {
     "extends": [
